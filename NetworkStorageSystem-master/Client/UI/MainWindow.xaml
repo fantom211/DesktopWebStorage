@@ -1,0 +1,45 @@
+﻿<Window x:Class="Client.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client.UI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Folders -->
+        <TreeView x:Name="FoldersTree"
+                  SelectedItemChanged="FoldersTree_SelectedItemChanged"
+                  Grid.Column="0"/>
+
+        <!-- Files -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <ListView x:Name="FilesList" Grid.Row="0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="200"/>
+                        <GridViewColumn Header="Extension" DisplayMemberBinding="{Binding Extension}" Width="100"/>
+                        <GridViewColumn Header="Size" DisplayMemberBinding="{Binding Size}" Width="100"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Button Content="Upload" Click="Upload_Click" Width="80"/>
+                <Button Content="Delete" Click="Delete_Click" Width="80"/>
+                <Button Content="Rename" Click="Rename_Click" Width="80"/>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

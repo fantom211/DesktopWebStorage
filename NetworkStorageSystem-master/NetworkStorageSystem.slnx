@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="Client/Client.csproj" />
+  <Project Path="Core/Core.csproj" />
+  <Project Path="Data/Data.csproj" />
+  <Project Path="Server/Server.csproj" />
+  <Project Path="Services/Services.csproj" />
+  <Project Path="Storage/Storage.csproj" />
+</Solution>
